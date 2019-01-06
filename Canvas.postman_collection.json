@@ -1,0 +1,1260 @@
+{
+	"info": {
+		"_postman_id": "d43bd756-7ae9-4c4b-bd28-ba5ba151324e",
+		"name": "Canvas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list active courses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/users/self/courses?enrollment_state=active",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"self",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "enrollment_state",
+							"value": "active"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get recently updated files by course",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/files?per_page=200&sort=updated_at&order=desc",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"files"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "200"
+						},
+						{
+							"key": "sort",
+							"value": "updated_at"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get recently updated folders by course",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/folders?sort=updated_at&order=desc",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"folders"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "updated_at"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get recently created folders by course",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/folders?sort=updated_at&order=desc&per_page=200",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"folders"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "updated_at"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "per_page",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRootFolder",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/folders/root",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"folders",
+						"root"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFolders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"disabled": false
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/folders?per_page=200",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"folders"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rootFolders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"disabled": false
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootFoldersURL}}/?per_page=100",
+					"host": [
+						"{{rootFoldersURL}}"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://uvu.instructure.com/profile/tokens/1984654?_method=DELETE",
+					"protocol": "https",
+					"host": [
+						"uvu",
+						"instructure",
+						"com"
+					],
+					"path": [
+						"profile",
+						"tokens",
+						"1984654"
+					],
+					"query": [
+						{
+							"key": "_method",
+							"value": "DELETE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getModules",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/modules?per_page=100",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"modules"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAssignments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/assignments?order_by=position",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"assignments"
+					],
+					"query": [
+						{
+							"key": "order_by",
+							"value": "position"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCalendarEvents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/calendar_events",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"calendar_events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getActivityStream",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/users/self/activity_stream",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"self",
+						"activity_stream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getActivityStreamSummary",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/users/self/activity_stream/summary",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"self",
+						"activity_stream",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTodo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/users/self/todo",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"self",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUpcomingEvents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/users/self/upcoming_events",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"self",
+						"upcoming_events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setCourseNickname",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/users/self/course_nicknames/{{courseID}}?nickname=IT 2",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"self",
+						"course_nicknames",
+						"{{courseID}}"
+					],
+					"query": [
+						{
+							"key": "nickname",
+							"value": "IT 2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCoursePermissions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/permissions",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCoursePages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/pages",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"pages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCourseTabs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/tabs",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"tabs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCourseActivityStream",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/activity_stream",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"activity_stream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNotifications",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/accounts/self/account_notifications",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"accounts",
+						"self",
+						"account_notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAccounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/accounts",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSubmissions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/assignments/4083456/submissions",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"assignments",
+						"4083456",
+						"submissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gradeSubmission",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"submission\": {\n\t\t\"posted_grade\": \"10\"\n\t},\n\t\"comment\": {\n\t\t\"text_comment\": \"This is a sample comment\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/assignments/4083456/submissions/1870113?",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"assignments",
+						"4083456",
+						"submissions",
+						"1870113"
+					],
+					"query": [
+						{
+							"key": "submission",
+							"value": "\"10\"",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "test.txt",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{rootURL}}/api/v1/courses/{{courseID}}/files",
+					"protocol": "https",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list accounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/accounts",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list courses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/users/self/courses",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"self",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create course",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "course[name]",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "enroll_me",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/accounts/{{accountID}}/courses",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"accounts",
+						"{{accountID}}",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete course",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "event",
+							"value": "delete",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enroll user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "enrollment[user_id]",
+							"value": "{{userID}}",
+							"type": "text"
+						},
+						{
+							"key": "enrollment[enrollment_state]",
+							"value": "active",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/enrollments",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"enrollments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accept enrollment invitation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/enrollments/{{courseID}}/accept",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"enrollments",
+						"{{courseID}}",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "publish course",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "course[event]",
+							"value": "publish",
+							"type": "text"
+						},
+						{
+							"key": "enroll_me",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "course[is_public_to_auth_users]",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "offer",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list enrollments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "enrollment[user_id]",
+							"value": "{{userID}}",
+							"type": "text"
+						},
+						{
+							"key": "enroll_me",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/enrollments",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"enrollments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list courses in account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/accounts/{{accountID}}/courses",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"accounts",
+						"{{accountID}}",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create folder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "parent_folder_id",
+							"value": "22",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{rootURL}}/api/v1/courses/{{courseID}}/folders",
+					"host": [
+						"{{rootURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courses",
+						"{{courseID}}",
+						"folders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
